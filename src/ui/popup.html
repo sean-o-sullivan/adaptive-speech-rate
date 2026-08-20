@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Adaptive Speech Rate</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <img src="../icons/icon32.png" width="32" height="32" alt="">
+        <span>
+          <h1>Adaptive Speech Rate</h1>
+          <small id="status">Loading…</small>
+        </span>
+        <input id="enabled" class="switch" type="checkbox" role="switch" aria-label="Adaptive mode" disabled>
+      </header>
+
+      <section aria-label="Controller settings">
+        <label for="targetSyllablesPerSecond">Target articulation <small>syl/s</small></label>
+        <input id="targetSyllablesPerSecond" type="number" min="1" max="20" step="0.25" disabled>
+
+        <label for="analysisWindowSeconds">Analysis window <small>source s</small></label>
+        <input id="analysisWindowSeconds" type="number" min="1" max="15" step="0.5" disabled>
+
+        <label for="minimumPlaybackRate">Minimum playback <small>×</small></label>
+        <input id="minimumPlaybackRate" type="number" min="0.25" max="4" step="0.05" disabled>
+
+        <label for="maximumPlaybackRate">Maximum playback <small>×</small></label>
+        <input id="maximumPlaybackRate" type="number" min="0.25" max="4" step="0.05" disabled>
+      </section>
+
+      <p id="error" role="alert"></p>
+      <p class="hint">Start, stop, and inspect the controller from the compact page pill.</p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>
